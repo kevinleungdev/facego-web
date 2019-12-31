@@ -1,0 +1,28 @@
+.caption-title {
+    padding: 0px;
+    margin: 0px 0px 15px 0px;
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    color: #89C4F4;
+}
+
+.form-normal {
+    font-weight: 500 !important;
+}
+
+.no-margin-left {
+    margin-left: 0 !important;
+}
+
+.list-info {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.copyright {
+    text-align: center;
+    margin: 0 auto 0 0;
+    padding: 10px;
+    font-size: 13px;
+}

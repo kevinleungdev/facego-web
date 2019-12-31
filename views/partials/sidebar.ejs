@@ -1,0 +1,74 @@
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <!-- begin sidebar menu -->
+        <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+            <li class="sidebar-toggler-wrapper">
+                <!-- begin sidebar toggler button -->
+                <div class="sidebar-toggler"></div>
+                <!-- end sidebar toggler button -->
+            </li> 
+            
+            <% if (activeItem == 'employees') { %>
+            <li class="active" style="margin-top: 8px;">
+                <a href="javascript:;">
+            <% } else { %>
+            <li style="margin-top: 8px;">
+                <a href="/admin/employee">
+            <% } %>
+                    <i class="icon-user"></i>
+                    <span class="title">Employees</span>
+                    <% if (activeItem == 'employees') { %>
+                    <span class="selected"></span>
+                    <% } %>
+                </a>
+            </li>
+            
+            <% if (activeItem == 'booking_history') { %>
+            <li class="active">
+                <a href="javascript:;">
+            <% } else { %>
+            <li>
+                <a href="/admin/booking/history">
+            <% } %>
+                    <i class="icon-calendar"></i>
+                    <span class="title">Booking History</span>
+                    <% if (activeItem == 'booking_history') { %>
+                    <span class="selected"></span>
+                    <% } %>
+                </a>
+            </li>
+
+            <% if (activeItem == 'attendance_records') { %>
+            <li class="active">
+                <a href="javascript:;">
+            <% } else { %>
+            <li>
+                <a href="/admin/attendance/main">
+            <% } %>
+                    <i class="icon-notebook"></i>
+                    <span class="title">Attendance Records</span>
+                    <% if (activeItem == 'attendance_records') { %>
+                    <span class="selected"></span>
+                    <% } %>
+                </a>
+            </li>
+
+            <li>
+                <a href="javascript:;">
+                    <i class="icon-settings"></i>
+                    <span class="title">Management</span>
+                    <span class="arrow"></span>
+                </a>    
+                <ul class="sub-menu">
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-user-follow"></i>
+                            <span class="title">Accounts</span>  
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- end sidebar menu -->
+    </div>
+</div>

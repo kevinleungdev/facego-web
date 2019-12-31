@@ -1,0 +1,41 @@
+{
+    "baidu": {
+        "app_id": "10361292",
+        "api_key": "Gpq3cBrYhpbrpW20ODQabh8v",
+        "secret_key": "3c012cc2c051c18baa1c89be2cd16b4c"
+    },
+
+    "audio": {
+        "output_dir": "./public/tmp",
+        "url": "/tmp"
+    },
+
+    "db": {
+        "host": "127.0.0.1",
+        "port": 3306,
+        "name": "mego",
+        "user": "root",
+        "password": "root@123",
+        "type": "mysql"
+    },
+
+    "face": {
+        "websocket_url": "wss://mego1.hitachiconsulting.net:9000"
+    },
+
+    "employee": {
+        "new_url": "https://mego1.hitachiconsulting.net:8080/face/new_employee",
+        "change_avatar_url": "https://mego1.hitachiconsulting.net:8080/face/change_employee_avatar"
+    },
+
+    "web": {
+        "port": 80,
+        "ssl_port": 443
+    }, 
+
+    "useSSL": true,
+
+    "ssl_key": "D:\\Project\\MeetingGo\\01.trunk\\03.Src\\main\\server\\mego\\keys\\server.key",
+
+    "ssl_certificate": "D:\\Project\\MeetingGo\\01.trunk\\03.Src\\main\\server\\mego\\keys\\server.crt"
+}

@@ -1,0 +1,251 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Mego | Administration</title>
+
+    <link rel="icon" sizes="600x600" href="/img/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/css/googlefonts.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/font-awsome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/simple-line-icons/simple-line-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap-modal/css/bootstrap-modal-bs3patch.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap-modal/css/bootstrap-modal.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/uniform/css/uniform.default.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/datatables/plugins/bootstrap/dataTables.bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/components.css">
+    <link rel="stylesheet" type="text/css" href="/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/darkblue.css">
+</head>
+
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
+    <!-- begin header -->
+    <% include ../partials/header %>
+        <!-- end header -->
+
+        <div class="clearfix"></div>
+
+        <!-- begin container -->
+        <div class="page-container">
+            <!-- begine sidebar -->
+            <% var activeItem= 'employees'; %>
+                <% include ../partials/sidebar %>
+                    <!-- end sidebar -->
+
+                    <!-- begin content -->
+                    <div class="page-content-wrapper">
+                        <div class="page-content" style="min-height:900px;">
+                            <!-- begin page header -->
+                            <div class="page-bar">
+                                <ul class="page-breadcrumb">
+                                    <li>
+                                        <i class="icon-user"></i>
+                                        <a href="/admin/employee">Employees</a>
+                                        <i class="fa fa-angle-right"></i>
+                                    </li>
+                                    <li>
+                                        <%= employee.fullname %>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- end page header -->
+
+                            <!-- begin page content -->
+                            <div class="portlet box blue">
+                                <div class="portlet-title">
+                                    <div class="caption" style="font-size: 14px; line-height: 20px;">
+                                        <i class="icon-user-follow"></i>
+                                        Profile
+                                    </div>
+                                </div>
+
+
+                                <div class="portlet-body form">
+                                    <!-- begin form -->
+                                    <form method="POST" action="/admin/employee/update/<%= employee.id %>" id="form_employee" class="form-horizontal" style="margin-bottom: 0px;">
+                                        <!-- begin form body -->
+                                        <div class="form-body">
+                                            <!-- begin error tips -->
+                                            <div class="alert alert-danger display-hide">
+                                                <button class="close" data-close="alert"></button>
+                                            </div>
+                                            <!-- end error tips -->
+
+                                            <!-- begin success tips -->
+                                            <div class="alert alert-success display-hide">
+                                                <button class="close" data-close="alert"></button>
+                                            </div>
+                                            <!-- end success tips -->
+
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <a href="javascript:;" id="change_avatar">
+                                                        <img src="<%= employee.employee_info.avatar %>" alt="avatar" style="width: 200px; height: 200px; margin-left: 16px;" class="img-thumbnail" id="img_display">
+                                                    </a>
+                                                </div>
+
+                                                <div class="col-md-7">
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">First Name
+                                                                <span class="required" aria-required="true"> * </span>
+                                                            </label>
+                                                            <div class="col-md-4">
+                                                                <input type="text" name="firstname" data-required="1" class="form-control" value="<%= employee.firstname %>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">Last Name
+                                                                <span class="required" aria-required="true"> * </span>
+                                                            </label>
+                                                            <div class="col-md-4">
+                                                                <input type="text" name="lastname" data-required="1" class="form-control" value="<%= employee.lastname %>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">English Name
+                                                                <span class="required" aria-required="true"> * </span>
+                                                            </label>
+                                                            <div class="col-md-4">
+                                                                <input type="text" name="engname" data-required="1" class="form-control" value="<%= employee.engName %>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">Job Title
+                                                                <span class="required" aria-required="true"> * </span>
+                                                            </label>
+                                                            <div class="col-md-4">
+                                                                <input type="text" name="title" data-required="1" class="form-control" value="<%= employee.title %>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">Department
+                                                                <span class="required" aria-required="true"> * </span>
+                                                            </label>
+                                                            <div class="col-md-4">
+                                                                <input type="text" name="group" data-required="1" class="form-control" value="<%= employee.group %>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">Gender
+                                                                <span class="required" aria-required="true"> * </span>
+                                                            </label>
+                                                            <div class="col-md-4">
+                                                                <select class="form-control" name="gender">
+                                                                    <% if (employee.gender == 'Male') { %>
+                                                                    <option value="1" selected>Male</option>
+                                                                    <% } else { %>
+                                                                    <option value="1">Male</option>
+                                                                    <% } %>
+                                                                    <% if (employee.gender == 'Female') { %>
+                                                                    <option value="2" selected>Female</option>
+                                                                    <% } else { %>
+                                                                    <option value="2">Female</option>
+                                                                    <% } %>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">Email
+                                                                <span class="required" aria-required="true"> * </span>
+                                                            </label>
+                                                            <div class="col-md-4">
+                                                                <input type="text" name="email" data-required="1" class="form-control" value="<%= employee.email %>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end form body -->
+
+                                        <!-- begin form actions -->
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" class="btn green" id="btn_submit">Submit</button>
+                                                    <button type="button" class="btn default">Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end form actions -->
+                                    </form>
+                                    <!-- end form -->
+                                </div>
+                            </div>
+                            <!-- end page content -->
+                        </div>
+                    </div>
+                    <!-- end content -->
+
+                    <!-- begin change avatar -->
+                    <form id="form_chg_avatar" action="<%= change_avatar_url %>">
+                        <input type="file" accept="image/*" name="imgChooser" id="img_chooser" style="display: none;">
+                        <input type="hidden" name="employee_id" id="employee_id" value="<%= employee.id %>">
+                    </form>
+
+                    <div id="chg_avatar_dialog" class="modal fade" tabindex="-1" data-focus-on="input:first">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Change Avatar</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <a href="javascript:;" id="image_chooser_a">Choose a image as your avatar...</a>
+                    
+                            <div class="row" style="margin-top: 16px;"> 
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <img src="/img/no-images.png" alt="avatar" style="width: 140px; height: 140px;" class="img-thumbnail" id="img_new">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                          
+                            
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                            <button type="button" class="btn btn-primary" id="btn_chg_avatar_ok">Ok</button>
+                        </div>
+                    </div>
+                    <!-- end change avatar -->
+
+                    <!-- begin footer -->
+                    <% include ../partials/footer %>
+                    <!-- end footer -->
+        </div>
+        <!-- end container -->
+
+        <!-- begin javascript -->
+        <!-- begin core plugins -->
+        <script type="text/javascript" src="/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="/vendor/jquery-validation/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="/vendor/boostrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/vendor/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+        <script type="text/javascript" src="/vendor/bootstrap-modal/js/bootstrap-modal.js"></script>
+
+        <script type="text/javascript" src="/theme/scripts/metronic.js"></script>
+        <script type="text/javascript" src="/theme/scripts/layout.js"></script>
+        <script type="text/javascript" src="/scripts/admin/employee_update.js"></script>
+        <!-- end core plugins -->
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                Metronic.init();
+                Layout.init();
+            });
+        </script>
+        <!-- end javascript -->
+</body>
+
+</html>

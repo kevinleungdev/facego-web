@@ -1,0 +1,82 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+        <title>Mego | Dashboard</title>
+
+        <link rel="icon" sizes="600x600" href="/img/logo.png">
+    
+        <link rel="stylesheet" type="text/css" href="/vendor/boostrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendor/font-awsome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendor/simple-line-icons/simple-line-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="/theme/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="/css/components.css">
+        <link rel="stylesheet" type="text/css" href="/css/plugins.css">
+        <link rel="stylesheet" type="text/css" href="/css/index.css">
+    </head>
+    <body class="page-container-bg-solid">
+        <!-- begine container -->
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content no-margin-left">
+                    <!-- begin toggler -->
+                    <div class="theme-panel">
+                        <a class="toggler" href="/admin/login"></a>    
+                    </div>
+                    <!-- end toggler -->
+
+                    <!-- begin page header -->
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                <a href="/">Home</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-dashboard"></i>
+                                <a href="javascript:;">Dashboard</a>
+                            </li>
+                        </ul>
+
+                        <div class="page-toolbar">
+                            <div class="pull-right tooltips btn btn-sm btn-default">
+                                <i class="icon-calendar"></i>
+                                <span class="thin visible-lg-inline-block"><%= today %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="page-title">Dashboard
+                        <small>The list of meeting</small>
+                    </h3>
+                    <!-- end page header -->
+
+                    <div id="empty_info" class="row hide">
+                        <div class="col-md-12">
+                            <h4 class="caption-title font-green-sharp">There is no meeting today.</h4>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="list-info">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+
+        <div class="copyright">
+            2017 @ Hitachi CDC
+        </div>
+    </body>
+
+    <script type="text/javascript" src="/vendor/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/vendor/boostrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/theme/scripts/metronic.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/theme/scripts/layout.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/scripts/index.js" type="text/javascript"></script>
+</html>
